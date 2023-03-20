@@ -1,6 +1,6 @@
 package com.example.demo.service;
 
-import com.example.demo.model.HaiDang;
+import com.example.demo.repository.HaiDang;
 import com.example.demo.repository.HaiDangRepository;
 import com.example.demo.repository.TestRepository;
 import org.springframework.beans.factory.annotation.Autowired;
