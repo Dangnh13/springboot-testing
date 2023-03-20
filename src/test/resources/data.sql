@@ -1,0 +1,1 @@
+INSERT INTO hai_dang (username) VALUES ('ID =1');

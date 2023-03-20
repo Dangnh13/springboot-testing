@@ -1,0 +1,1 @@
+INSERT INTO hai_dang (username) VALUES ('Insert from insert-sql');
