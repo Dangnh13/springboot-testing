@@ -1,16 +1,13 @@
-package com.example.demo.service;
+package com.example.demo.service.impl;
 
-import com.example.demo.repository.HaiDang;
-import com.example.demo.repository.HaiDangRepository;
-import com.example.demo.repository.TestRepository;
+import com.example.demo.jpa.entity.HaiDang;
+import com.example.demo.jpa.repository.HaiDangRepository;
+import com.example.demo.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class TestServiceImpl implements TestService{
-
-    @Autowired
-    private TestRepository testRepository;
+public class TestServiceImpl implements TestService {
 
     @Autowired
     private HaiDangRepository haiDangRepository;
@@ -19,10 +16,6 @@ public class TestServiceImpl implements TestService{
 
     public int getId() {
         return this.id;
-    }
-    @Override
-    public String getUsername(String firstName, String lastName) {
-        return testRepository.getFullName(firstName, lastName);
     }
 
     @Override
