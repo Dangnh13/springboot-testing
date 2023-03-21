@@ -3,9 +3,11 @@ package com.example.demo.jpa.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import java.util.Date;
 
 @Entity
+@NamedQuery(name = "findAllPerson", query = "select p from Person p")
 public class Person {
     @Id
     @GeneratedValue

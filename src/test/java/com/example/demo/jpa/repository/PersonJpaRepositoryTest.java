@@ -10,6 +10,7 @@ import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.jdbc.Sql;
 
 import java.util.Date;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -63,5 +64,12 @@ class PersonJpaRepositoryTest {
         personJpaRepository.delete(1001);
         Person person = personJpaRepository.findById(1001);
         assertNull(person);
+    }
+
+    @Test
+    @Sql("/insert-person.sql")
+    void findAllTest() {
+        List<Person> list = personJpaRepository.findAll();
+        assertEquals(3, list.size());
     }
 }
