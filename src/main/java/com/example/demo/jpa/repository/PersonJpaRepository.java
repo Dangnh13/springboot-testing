@@ -7,6 +7,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
+
+import java.util.Date;
 import java.util.List;
 
 @Repository
@@ -32,8 +34,19 @@ public class PersonJpaRepository {
         return entityManager.merge(person);
     }
 
+    public void persist(Person person) {
+        // Select before insert and update
+//        person = entityManager.merge(person);
+
+        entityManager.persist(person);
+//         person.setName("Change name after persist");
+        System.out.println("done");
+    }
+
+
     public void delete(int id) {
         Person person = findById(id);
         entityManager.remove(person);
+        System.out.println("Persist done");
     }
 }
