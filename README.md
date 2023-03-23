@@ -16,3 +16,6 @@ Junit jupiter 5.9.2
 > spring.sql.init.schema-locations=classpath:schema-dev.sql <br>
 > spring.sql.init.data-locations=classpath:data-dev.sql
 
+### NOTE
+- More info about springboot transaction:
+> https://www.marcobehler.com/guides/spring-transaction-management-transactional-in-depth

@@ -6,6 +6,7 @@ import java.util.List;
 import com.example.demo.jpa.entity.Product;
 import com.example.demo.jpa.repository.ProductRepository;
 import com.example.demo.service.ProductService;
+import com.example.demo.service.TransactionTestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -26,6 +27,9 @@ public class DemoApplication implements CommandLineRunner {
 	@Autowired
 	ProductService productService;
 
+	@Autowired
+	TransactionTestService transactionTestService;
+
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
 	}
@@ -45,10 +49,7 @@ public class DemoApplication implements CommandLineRunner {
 		product.setSku("SKU");
 		productRepository.saveAndFlush(product);
 
-		productService.updateProductName("NEW NAME22");
 
-		Product findPrd = productRepository.findById(1L).get();
-		System.out.println(findPrd.getName());
 
 	}
 

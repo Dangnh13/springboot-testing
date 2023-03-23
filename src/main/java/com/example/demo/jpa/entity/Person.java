@@ -21,7 +21,7 @@ import lombok.Setter;
 public class Person {
     @Id
     @GeneratedValue
-    private int id;
+    private Long id;
     private String name;
     private String location;
     private Date birthDate;

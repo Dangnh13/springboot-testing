@@ -14,10 +14,14 @@ public class ProductService {
     @Autowired
     ProductRepository productRepository;
 
-    @Transactional(value = Transactional.TxType.NEVER)
+    @Autowired
+    TestService testService;
+
+    @Transactional(value = Transactional.TxType.REQUIRED)
     public void updateProductName(String newName) {
         Product product = productRepository.findById(1L).get();
         product.setName(newName);
-
+        productRepository.saveAndFlush(product);
+        int a = 1/0;
     }
 }
